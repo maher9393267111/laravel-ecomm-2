@@ -34,3 +34,8 @@ Route::middleware([
 //  redirect function in routesServiceProvider.php file see
 Route::get('/redirect',[HomeController::class,'redirect']);
 //->middleware('auth','verified');
+
+
+
+//HomePage
+Route::get('/',[HomeController::class,'index']);
