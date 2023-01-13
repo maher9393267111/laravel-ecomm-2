@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+
+
+//  redirect function in routesServiceProvider.php file see
+Route::get('/redirect',[HomeController::class,'redirect']);
+//->middleware('auth','verified');
