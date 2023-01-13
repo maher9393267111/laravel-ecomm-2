@@ -80,14 +80,20 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-icon">
-            <i class="mdi mdi-playlist-play"></i>
-          </span>
-          <span class="menu-title">Form Elements</span>
-        </a>
-      </li>
+     
+{{-- ///Catagory M --}}
+
+<li class="nav-item menu-items">
+  <a class="nav-link" href="{{ url('view_category') }}">
+      <span class="menu-icon">
+          <i class="mdi mdi-playlist-play"></i>
+      </span>
+      <span class="menu-title">Catagory</span>
+  </a>
+</li>
+
+
+
       <li class="nav-item menu-items">
         <a class="nav-link" href="pages/tables/basic-table.html">
           <span class="menu-icon">
