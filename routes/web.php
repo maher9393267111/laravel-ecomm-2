@@ -48,3 +48,16 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('/view_catagory',[AdminController::class,'view_catagory']);
 Route::post('/add_catagory',[AdminController::class,'add_catagory']);
 Route::get('/delete_catagory/{id}',[AdminController::class,'delete_catagory']);
+
+
+
+Route::get('/view_product',[AdminController::class,'view_product']);
+
+Route::post('/add_product',[AdminController::class,'add_product']);
+
+Route::get('/show_product',[AdminController::class,'show_product']);
+
+Route::get('/delete_product/{id}',[AdminController::class,'delete_product']);
+
+Route::get('/update_product/{id}',[AdminController::class,'update_product']);
+Route::post('/update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
