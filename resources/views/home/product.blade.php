@@ -78,6 +78,9 @@
             </span>
         </div>
         <script>
+
+
+// when add product to cart refresh page and go again to products section with scrollable
             document.addEventListener("DOMContentLoaded", function(event) {
                 var scrollpos = localStorage.getItem('scrollpos');
                 if (scrollpos) window.scrollTo(0, scrollpos);

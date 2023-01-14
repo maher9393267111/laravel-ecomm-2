@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 class HomeController extends Controller
 {
@@ -145,6 +146,43 @@ public function remove_cart($id)
 
     return redirect()->back()->with('message','Remove Product Successfully');
 }
+
+
+public function cash_order()
+{
+    $user=Auth::user();
+    $user_id=$user->id;
+
+    $data=cart::where('user_id','=',$user_id)->get();
+
+    foreach ($data as $data)
+    {
+        $order=new order;
+        $order->name=$data->name;
+        $order->email=$data->email;
+        $order->phone=$data->phone;
+        $order->address=$data->address;
+        $order->user_id=$data->user_id;
+        $order->product_title=$data->product_title;
+        $order->price=$data->price;
+        $order->quantity=$data->quantity;
+        $order->image=$data->image;
+        $order->product_id=$data->product_id;
+
+        $order->payment_status='cash on delivery';
+        $order->delivery_status='processing';
+
+        $order->save();
+
+        $cart_id=$data->id;
+        $cart=cart::find($cart_id);
+
+        $cart->delete();
+    }
+
+    return redirect()->back()->with('message','We Have Received Your Order. We Will Connect With You Soon ....');
+}
+
 
 
 
