@@ -47,7 +47,7 @@
       <!-- end arrival section -->
       
       <!-- product section -->
-      @include("home.our_Products")
+      @include("home.product")
       <!-- end product section -->
 
       <!-- subscribe section -->
